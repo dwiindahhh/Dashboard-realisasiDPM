@@ -1,0 +1,19 @@
+# ── Web Framework ─────────────────────────────────────────────────
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+
+# ── Database ──────────────────────────────────────────────────────
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+alembic==1.13.2            # migrasi skema DB
+
+# ── Data Processing (dari project lama) ──────────────────────────
+pandas==2.2.3
+numpy==2.1.1
+openpyxl==3.1.5
+pycountry==24.6.1
+
+# ── Utilities ─────────────────────────────────────────────────────
+python-dotenv==1.0.1        # load .env
+pydantic==2.9.2             # validasi request/response
+pydantic-settings==2.5.2    # settings dari env vars

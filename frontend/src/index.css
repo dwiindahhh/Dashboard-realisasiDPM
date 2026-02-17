@@ -1,0 +1,119 @@
+/* ── Tailwind base layers ─────────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties (Design Tokens) ───────────────────────── */
+:root {
+  --navy:       #0f2a5e;
+  --navy-mid:   #1a3a7a;
+  --navy-light: #1e4db7;
+  --blue:       #1d4ed8;
+  --blue-light: #3b82f6;
+  --blue-pale:  #dbeafe;
+  --cyan:       #06b6d4;
+  --gold:       #f59e0b;
+  --teal:       #0d9488;
+  --bg:         #f0f4ff;
+  --surface:    #ffffff;
+  --border:     #e2e8f0;
+  --text:       #0f172a;
+  --text-mid:   #334155;
+  --text-mute:  #64748b;
+  --green:      #059669;
+  --red:        #dc2626;
+}
+
+/* ── Base Styles ──────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar styling ────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c7d7f0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #93b4e0;
+}
+
+/* ── Utility classes (komponen reusable) ─────────────────────────── */
+@layer components {
+  /* Card dasar */
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200 shadow-card;
+  }
+
+  /* Tombol primer navy */
+  .btn-primary {
+    @apply px-4 py-2 bg-navy text-white text-xs font-bold rounded-lg
+           hover:bg-navy-mid transition-colors duration-150
+           flex items-center gap-1.5;
+  }
+
+  /* Tombol outline */
+  .btn-outline {
+    @apply px-4 py-2 bg-white text-slate-600 text-xs font-semibold
+           border border-slate-200 rounded-lg
+           hover:bg-slate-50 transition-colors duration-150
+           flex items-center gap-1.5;
+  }
+
+  /* Badge status */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5
+           rounded-full text-xs font-semibold;
+  }
+  .badge-up {
+    @apply bg-green-100 text-green-700;
+  }
+  .badge-down {
+    @apply bg-red-100 text-red-700;
+  }
+
+  /* Section label di sidebar */
+  .sidebar-label {
+    @apply text-[10px] font-bold uppercase tracking-widest text-slate-400
+           font-body px-2 py-1;
+  }
+}
+
+/* ── Animasi ──────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.35s ease both;
+}
+
+/* Staggered delay untuk card KPI */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
