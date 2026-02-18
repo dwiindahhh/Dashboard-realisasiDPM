@@ -1,35 +1,35 @@
 Monorepo modern: **React + TypeScript** (frontend) + **FastAPI Python** (backend).
 
 **-- Frontend --
-Masuk ke direktori frontend **
+Masuk ke direktori frontend ** : 
   cd frontend
 
-**Install Dependensi**
+**Install Dependensi** : 
   npm install
 
-**Konfigurasi environement**
+**Konfigurasi environement** : 
   cp .env.example .env
 
-**Menjalankan server dev**
+**Menjalankan server dev** : 
   npm run dev
 
 
 **-- Backend --
-Masuk ke direktori backend**
+Masuk ke direktori backend** : 
   cd backend
 
-**Membuat virtual environment**
+**Membuat virtual environment** : 
   python -m venv .venv
 
-**Mengaktifkan virtual environment**
+**Mengaktifkan virtual environment**: 
   Windows: .venv\Scripts\activate
-  Mac/Linux: source .venv/bin/activate
-**
-Install dependensi**
+  
+**Install dependensi** : 
   pip install -r requirements.txt
 
-**Konfigurasi environment**
+**Konfigurasi environment** : 
   cp .env.example .env
 
-**Menjalankan server**
+**Menjalankan server** : 
   uvicorn main:app --reload --port 8000
+
